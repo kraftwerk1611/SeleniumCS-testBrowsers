@@ -10,14 +10,16 @@ namespace SeleniumCS_testBrowsers
     {
         static void Main()
         {
-            IWebDriver driver = new FirefoxDriver();
-            
-            driver.Navigate().GoToUrl("http://www.google.com");
-            driver.Close();
+            //IWebDriver driver = new FirefoxDriver();
 
-            //IWebDriver chromeDriver = new ChromeDriver();
-            //chromeDriver.Navigate().GoToUrl("http://www.letskodeit.com");
+            //driver.Navigate().GoToUrl("http://www.google.com");
             //driver.Close();
+
+            IWebDriver chromeDriver = new ChromeDriver();
+            chromeDriver.Navigate().GoToUrl("http://www.letskodeit.com");
+            chromeDriver.Close();
+
+
         }
     }
 }
