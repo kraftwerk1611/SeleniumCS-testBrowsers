@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumCS_testBrowsers
 {
-    class Program
+    class Base
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
