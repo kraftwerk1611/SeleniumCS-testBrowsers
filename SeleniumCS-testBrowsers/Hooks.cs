@@ -10,20 +10,27 @@ namespace SeleniumCS_testBrowsers
     {
         static void Main()
         {
-            //IWebDriver driver = new FirefoxDriver();
+            IWebDriver driver = new FirefoxDriver();
+            System.Console.WriteLine(driver.GetType().ToString());
 
-            //driver.Navigate().GoToUrl("http://www.google.com");
-            //driver.Close();
+            //find out which driver is chosen
+            if (driver.GetType().ToString().Contains("Chrome"))
+            {
+                driver.Navigate().GoToUrl("http://www.gmail.com");
+                
+            }
 
-            ////Following code opens chrome browser
-            //IWebDriver driver = new ChromeDriver();
-            //driver.Navigate().GoToUrl("http://www.letskodeit.com");
-            //driver.Close();
+            else if (driver.GetType().ToString().Contains("InternetExplorer"))
+            {
+                driver.Navigate().GoToUrl("http://www.hotmail.com");
+            }
 
-            IWebDriver driver = new InternetExplorerDriver();
-            driver.Navigate().GoToUrl("http://www.google.com");
+            else if (driver.GetType().ToString().Contains("Firefox"))
+            {
+                driver.Navigate().GoToUrl("http://www.yahoo.com");
+            }
+
             driver.Close();
-
 
         }
     }
