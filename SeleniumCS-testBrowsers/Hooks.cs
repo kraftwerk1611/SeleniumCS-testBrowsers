@@ -15,9 +15,14 @@ namespace SeleniumCS_testBrowsers
             //driver.Navigate().GoToUrl("http://www.google.com");
             //driver.Close();
 
-            IWebDriver chromeDriver = new ChromeDriver();
-            chromeDriver.Navigate().GoToUrl("http://www.letskodeit.com");
-            chromeDriver.Close();
+            ////Following code opens chrome browser
+            //IWebDriver driver = new ChromeDriver();
+            //driver.Navigate().GoToUrl("http://www.letskodeit.com");
+            //driver.Close();
+
+            IWebDriver driver = new InternetExplorerDriver();
+            driver.Navigate().GoToUrl("http://www.google.com");
+            driver.Close();
 
 
         }
