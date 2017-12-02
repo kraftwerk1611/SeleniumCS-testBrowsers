@@ -2,30 +2,41 @@
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Opera;
 using System;
+using NUnit.Framework;
 
 namespace SeleniumCS_testBrowsers
 {
-    class Hooks
+    public class Hooks
     {
+        public static IWebDriver driver { get; set; }//generic browser
+
+        [SetUp]
         static void Main(string[] args)
         {
             //variables declaration
-            IWebDriver driver; //generic browser
+            
             string _browserType = args[0]; //get the command line argument for browser type
             _browserType = _browserType.ToLower(); //convert to all lower case
 
             Console.WriteLine(_browserType );
+
+            //method is called with browser type as argument
+            ChooseDriverInstance(_browserType);
 
             ////##Debug: iterate through CL arguments
             //foreach (string arg in args)
             //{ Console.WriteLine(arg);
             //}//end foreach
             
-           
+            
+
+        }//end main
+        
+        static void ChooseDriverInstance(string browserType)
+        {
             //find out which driver is chosen
-            if (_browserType == "chrome")
+            if (browserType == "chrome")
             {
                 driver = new ChromeDriver();
                 driver.Navigate().GoToUrl("http://www.gmail.com");
@@ -33,22 +44,26 @@ namespace SeleniumCS_testBrowsers
 
             }
 
-            else if (_browserType =="internetexplorer")
+            else if (browserType == "internetexplorer")
             {
                 driver = new InternetExplorerDriver();
                 driver.Navigate().GoToUrl("http://www.hotmail.com");
                 driver.Close();
             }
 
-            else if (_browserType=="firefox")
+            else if (browserType == "firefox")
             {
                 driver = new FirefoxDriver();
                 driver.Navigate().GoToUrl("http://www.yahoo.com");
                 driver.Close();
             }
 
-            
+        }//end ChooseDriverInstance()
 
-        }
+        [TearDown]
+        public void CloseBrowser()
+        {
+            driver.Quit();
+        }//end CloseBrowser()
     }
 }
