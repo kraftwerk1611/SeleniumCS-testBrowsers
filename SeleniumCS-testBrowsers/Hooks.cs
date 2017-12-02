@@ -27,16 +27,15 @@ namespace SeleniumCS_testBrowsers
         [SetUp]
         public void InitializeTest()
         {
-            //this code is probably for use when --parameter is used on command line
+            //the get method retrieves the value passed as Name-Value pair after --params on command line
             var browser = TestContext.Parameters.Get("Browser");
-            System.Console.WriteLine("The browser is " + browser);
+            //System.Console.WriteLine("The browser is " + browser);
             
             //variables declaration
 
-            string _browserType = "ie"; //Debug:hard coded value for now
-            _browserType = _browserType.ToLower(); //convert to all lower case
+           string _browserType = browser.ToLower(); //convert to all lower case
 
-            Console.WriteLine("The browser type is : " + _browserType);
+            
 
             //method is called with browser type as argument
             ChooseDriverInstance(_browserType);
