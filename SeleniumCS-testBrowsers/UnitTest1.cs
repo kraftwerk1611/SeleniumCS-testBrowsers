@@ -6,7 +6,7 @@ namespace SeleniumCS_testBrowsers
 {
     [Parallelizable]
     [TestFixture]
-    public class TodVachevSiteTesting : Hooks
+    public class BrowserTests : Hooks
     {
         [Test]
         public void testTodVachevSite()
@@ -15,12 +15,9 @@ namespace SeleniumCS_testBrowsers
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
-    }//end testFirefox class
 
-    [Parallelizable]
-    [TestFixture]
-    public class LetsKodeItTesting : Hooks
-    {
+
+
         [Test]
         public void testLetsKodeIt()
         {
@@ -28,12 +25,9 @@ namespace SeleniumCS_testBrowsers
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
-    }//end  class
 
-    [Parallelizable]
-    [TestFixture]
-    public class GoogleTesting : Hooks
-    {
+
+
         [Test]
         public void testGoogle()
         {
@@ -46,7 +40,8 @@ namespace SeleniumCS_testBrowsers
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
-    }//end  class
+
+    }
 }
 
   

@@ -7,8 +7,8 @@ using NUnit.Framework;
 
 namespace SeleniumCS_testBrowsers
 {
-    [Parallelizable ]
-    [TestFixture]
+    
+    
     public class Hooks:Base
     {
         //public static IWebDriver driver { get; set; }//generic browser
