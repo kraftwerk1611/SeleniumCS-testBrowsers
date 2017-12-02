@@ -4,11 +4,12 @@ using OpenQA.Selenium;
 
 namespace SeleniumCS_testBrowsers
 {
-    [Parallelizable]
+    
     [TestFixture]
     public class BrowserTests : Hooks
     {
         [Test]
+        //[Parallelizable]
         public void testTodVachevSite()
         {
             driver.Navigate().GoToUrl("http://testing.todvachev.com/");
@@ -19,6 +20,7 @@ namespace SeleniumCS_testBrowsers
 
 
         [Test]
+        //[Parallelizable]
         public void testLetsKodeIt()
         {
             driver.Navigate().GoToUrl("http://letskodeit.com");
@@ -28,7 +30,7 @@ namespace SeleniumCS_testBrowsers
 
 
 
-        [Test]
+        [Test, Order(1)]
         public void testGoogle()
         {
             driver.Navigate().GoToUrl("http://www.google.com");
@@ -40,7 +42,7 @@ namespace SeleniumCS_testBrowsers
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
-        [Test]
+        [Test, Order(2)]
         public void testExecuteAutomation()
         {
             driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
