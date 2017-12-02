@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 
 namespace SeleniumCS_testBrowsers
 {
+    [Parallelizable]
     [TestFixture]
     public class TodVachevSiteTesting : Hooks
     {
@@ -15,6 +16,7 @@ namespace SeleniumCS_testBrowsers
 
     }//end testFirefox class
 
+    [Parallelizable]
     [TestFixture]
     public class LetsKodeItTesting : Hooks
     {

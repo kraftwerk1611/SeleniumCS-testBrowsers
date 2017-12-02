@@ -1,0 +1,9 @@
+1-To run this project browser to where unit3-console.exe is located
+
+ G:\CodeRunning\Projects-Selenium-all\Selenium-C#-workspace\00CSProjects\SeleniumCS-testBrowsers\packages\NUnit.ConsoleRunner.3.7.0\tools
+
+
+
+2- and type following code giving the browser as command line prompt that you want to open 
+
+>>nunit3-console.exe --params:Browser=firefox "G:\CodeRunning\Projects-Selenium-all\Selenium-C#-workspace\00CSProjects\SeleniumCS-testBrowsers\SeleniumCS-testBrowsers\bin\Debug\SeleniumCS-testBrowsers.exe" 

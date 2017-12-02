@@ -7,6 +7,7 @@ using NUnit.Framework;
 
 namespace SeleniumCS_testBrowsers
 {
+    [Parallelizable ]
     [TestFixture]
     public class Hooks:Base
     {
