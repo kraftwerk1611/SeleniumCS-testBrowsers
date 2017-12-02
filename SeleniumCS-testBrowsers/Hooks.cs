@@ -7,9 +7,9 @@ using NUnit.Framework;
 
 namespace SeleniumCS_testBrowsers
 {
-    public class Hooks
+    public class Hooks:Base
     {
-        public static IWebDriver driver { get; set; }//generic browser
+        //public static IWebDriver driver { get; set; }//generic browser
 
         [SetUp]
         static void Main(string[] args)
