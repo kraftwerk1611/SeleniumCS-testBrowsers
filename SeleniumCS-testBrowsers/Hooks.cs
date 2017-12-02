@@ -7,31 +7,42 @@ using NUnit.Framework;
 
 namespace SeleniumCS_testBrowsers
 {
+    [TestFixture]
     public class Hooks:Base
     {
         //public static IWebDriver driver { get; set; }//generic browser
 
-        [SetUp]
-        static void Main(string[] args)
-        {
-            //variables declaration
-            
-            string _browserType = args[0]; //get the command line argument for browser type
-            _browserType = _browserType.ToLower(); //convert to all lower case
-
-            Console.WriteLine(_browserType );
-
-            //method is called with browser type as argument
-            ChooseDriverInstance(_browserType);
+        
+        static void Main()
+        {       
 
             ////##Debug: iterate through CL arguments
             //foreach (string arg in args)
             //{ Console.WriteLine(arg);
-            //}//end foreach
-            
+            //}//end foreach          
             
 
         }//end main
+
+        [SetUp]
+        public void InitializeTest()
+        {
+            //this code is probably for use when --parameter is used on command line
+            //var browser = TestContext.Parameters.Get("Browser");
+            //System.Console.WriteLine("The browser is " + browser);
+            
+            //variables declaration
+
+            string _browserType = "ie"; //Debug:hard coded value for now
+            _browserType = _browserType.ToLower(); //convert to all lower case
+
+            Console.WriteLine("The browser type is : " + _browserType);
+
+            //method is called with browser type as argument
+            ChooseDriverInstance(_browserType);
+
+
+        }//end InitializeTest()
         
         static void ChooseDriverInstance(string browserType)
         {
@@ -39,23 +50,23 @@ namespace SeleniumCS_testBrowsers
             if (browserType == "chrome")
             {
                 driver = new ChromeDriver();
-                driver.Navigate().GoToUrl("http://www.gmail.com");
-                driver.Close();
+                //driver.Navigate().GoToUrl("http://www.gmail.com");
+                
 
             }
 
-            else if (browserType == "internetexplorer")
+            else if (browserType == "ie")
             {
                 driver = new InternetExplorerDriver();
-                driver.Navigate().GoToUrl("http://www.hotmail.com");
-                driver.Close();
+                //driver.Navigate().GoToUrl("http://www.hotmail.com");
+                
             }
 
             else if (browserType == "firefox")
             {
                 driver = new FirefoxDriver();
-                driver.Navigate().GoToUrl("http://www.yahoo.com");
-                driver.Close();
+               // driver.Navigate().GoToUrl("http://testing.todvachev.com");
+                
             }
 
         }//end ChooseDriverInstance()
