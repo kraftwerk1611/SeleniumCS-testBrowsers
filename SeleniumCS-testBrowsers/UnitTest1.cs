@@ -40,6 +40,21 @@ namespace SeleniumCS_testBrowsers
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
+        [Test]
+        public void testExecuteAutomation()
+        {
+            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
+            driver.FindElement(By.Name("UserName")).SendKeys("admin");
+            driver.FindElement(By.Name("Password")).SendKeys("admin");
+            driver.FindElement(By.Name("Login")).Submit();
+            System.Threading.Thread.Sleep(2000);
+            Assert.That(driver.PageSource.Contains("Selenium"), Is.EqualTo(true),
+                                            "The text selenium doest not exist");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
+
+
+        }
+
 
     }
 }
