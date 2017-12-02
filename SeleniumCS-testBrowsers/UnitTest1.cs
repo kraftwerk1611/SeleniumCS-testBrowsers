@@ -12,6 +12,7 @@ namespace SeleniumCS_testBrowsers
         public void testTodVachevSite()
         {
             driver.Navigate().GoToUrl("http://testing.todvachev.com/");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
     }//end testFirefox class
@@ -24,6 +25,7 @@ namespace SeleniumCS_testBrowsers
         public void testLetsKodeIt()
         {
             driver.Navigate().GoToUrl("http://letskodeit.com");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
         }
 
     }//end  class
