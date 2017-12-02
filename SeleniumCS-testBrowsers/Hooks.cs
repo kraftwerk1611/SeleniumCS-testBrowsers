@@ -44,13 +44,13 @@ namespace SeleniumCS_testBrowsers
 
         }//end InitializeTest()
         
-        static void ChooseDriverInstance(string browserType)
+        private void ChooseDriverInstance(string browserType)
         {
             //find out which driver is chosen
             if (browserType == "chrome")
             {
                 driver = new ChromeDriver();
-                //driver.Navigate().GoToUrl("http://www.gmail.com");
+                
                 
 
             }
@@ -58,14 +58,14 @@ namespace SeleniumCS_testBrowsers
             else if (browserType == "ie")
             {
                 driver = new InternetExplorerDriver();
-                //driver.Navigate().GoToUrl("http://www.hotmail.com");
+                
                 
             }
 
             else if (browserType == "firefox")
             {
                 driver = new FirefoxDriver();
-               // driver.Navigate().GoToUrl("http://testing.todvachev.com");
+              
                 
             }
 

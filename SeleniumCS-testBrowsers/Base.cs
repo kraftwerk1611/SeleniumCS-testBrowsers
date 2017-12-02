@@ -4,6 +4,6 @@ namespace SeleniumCS_testBrowsers
 {
     public class Base
     {
-        public static IWebDriver driver { get; set; }//generic browser
+        public IWebDriver driver { get; set; }//generic browser
     }
 }
