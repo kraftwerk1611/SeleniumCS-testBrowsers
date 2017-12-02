@@ -28,8 +28,8 @@ namespace SeleniumCS_testBrowsers
         public void InitializeTest()
         {
             //this code is probably for use when --parameter is used on command line
-            //var browser = TestContext.Parameters.Get("Browser");
-            //System.Console.WriteLine("The browser is " + browser);
+            var browser = TestContext.Parameters.Get("Browser");
+            System.Console.WriteLine("The browser is " + browser);
             
             //variables declaration
 

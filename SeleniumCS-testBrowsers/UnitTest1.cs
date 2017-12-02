@@ -5,10 +5,10 @@ using OpenQA.Selenium;
 namespace SeleniumCS_testBrowsers
 {
     [TestFixture]
-    public class FirefoxTesting:Hooks 
+    public class TodVachevSiteTesting : Hooks
     {
         [Test]
-        public void testFirefox()
+        public void testTodVachevSite()
         {
             driver.Navigate().GoToUrl("http://testing.todvachev.com/");
         }
@@ -16,24 +16,15 @@ namespace SeleniumCS_testBrowsers
     }//end testFirefox class
 
     [TestFixture]
-    public class ChromeTesting : Hooks
+    public class LetsKodeItTesting : Hooks
     {
         [Test]
-        public void testChrome()
+        public void testLetsKodeIt()
         {
             driver.Navigate().GoToUrl("http://letskodeit.com");
         }
 
-    }//end ChromeTesting class
-
-    [TestFixture]
-    public class IETesting : Hooks
-    {
-        [Test]
-        public void testIE()
-        {
-            driver.Navigate().GoToUrl("http://www.google.com");
-        }
-
-    }//end IETesting class
+    }//end  class
 }
+
+  
